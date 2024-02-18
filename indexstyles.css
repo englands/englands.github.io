@@ -4,8 +4,8 @@
       body{
         line-height: 1.5;
         font-family: helvetica;
-        background-image: url('comicbook.jpg');
-		background-size: 100% 100%;
+        background-image: "comicbook.jpg";
+	background-size: 100% 100%;
      }
 	 
 	 
