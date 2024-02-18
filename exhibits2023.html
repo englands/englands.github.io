@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>USF Engineering EXPO</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <style>
+      :root{
+        --color-1: #000000;
+     }
+      body{
+        line-height: 1.5;
+        font-famliy: courier;
+        background-color: #041A0E;
+     }
+     *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+     }
+     a{
+       text-decoration: none;
+     }
+     ul{
+       list-style: none;
+     }
+     .container{
+        max-width: 1170px;
+        margin: auto;
+     }
+     .row{
+       display: flex;
+       flex-wrap: wrap;
+     }
+     .align-items-center{
+       align-items: center;
+     }
+     .justify-content-between{
+       justify-content: space-between;
+     }
+     .header{
+        background-color: var(--color-1);
+        padding: 12px 0;
+        position: relative;
+        font-family: courier; 
+        width: 100%;
+        position: fixed;
+     }     
+     .header .logo,
+     .header .nav{
+         padding: 0 15px;
+      }
+     .header .logo a{
+         font-size: 26px;
+         color:#1cc061;
+       } 
+     .header .nav ul li{
+        display: inline-block;
+        margin-left: 40px;
+     }
+     .header .nav ul li a{
+        display: block;
+        font-size: 22px;
+        padding: 10px 0;
+        color: rgba(28, 123, 192, 1);
+        transition: all 0.5s ease;
+     }
+     .header .nav ul li a:hover,
+     .header .nav ul li a.active{
+        color: #1cc061;
+      } 
+     .header #nav-check{
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      } 
+     .nav-toggler{
+        height: 34px;
+        width: 44px;
+        background-color: #ffffff;
+        border-radius: 4px;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+      }
+       .nav-toggler span{
+         display: block;
+         height: 2px;   
+         width: 20px;
+         background-color: var(--color-1);
+         position: relative;
+      }
+       .nav-toggler span::before,
+       .nav-toggler span::after{
+         content: ' ';
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         background-color: var(--color-1);
+         left:0;
+      }
+       .nav-toggler span::before{
+         top: -6px;
+      }
+       .nav-toggler span::after{
+         top: 6px;
+      }
+       .h1{
+         font-family: courier;
+         text-align: center;
+         color: #1C7BC0;
+      }
+       .h1 .exhibit{
+          display: inline-block;
+          padding-top: 30%;
+      }  
+        .nav2table {
+           border-spacing: 50px;
+      } 
+       .nav2table  a{
+        display: block;
+        font-size: 22px;
+        padding: 10px 0;
+        color: rgba(28, 123, 192, 1);
+        transition: all 0.5s ease;
+     }
+     .nav2table a:hover,
+     .nav2table a.active{
+        color: #1cc061;
+      } 
+       .h2{
+         font-family: courier;
+         text-align: center;
+         color: #1C7BC0;
+     }         
+       .h3{
+         font-family: helvetica;
+         text-align: center;
+         color: #ffffff;
+      }     
+        .h1 .soon{
+          padding-top: 10%;
+          padding-bottom: 10%;
+          color: #ffffff;
+      }     
+       .h5{
+         font-family: helvetica;
+         text-align: center; 
+         color: #1C7BC0;      
+      }
+       .h5 .usfinfo{
+          display: inline-block;
+          padding-top: 2%;
+       }
+       .h5 .legal{
+          display: inline-block;
+          padding-top: 2%;
+          padding-bottom: 4%;
+       }
+
+       @media(max-width: 991px){
+              .nav-toggler{  
+                  display: flex;
+                }
+             .header .nav{
+                  position: absolute;
+                  left:0;
+                  top: 100%;
+                  width: 100%;
+                  background-color: var(--color-1);
+                  border-top: 1px solid rgba(255,255,255,0.2);
+                  opacity:0;
+                  visibility: hidden;
+                }
+             .header .nav ul li{
+                 display: block;
+                 margin:0;
+                }
+             .header #nav-check:checked ~ .nav{
+                 opacity: 1;
+                 visibility: visible;
+                }
+             .header #nav-check:checked ~ .nav-toggler span{
+                  background-color: transparent;
+                }
+             .header #nav-check:checked ~ .nav-toggler span::before{
+                   top: 0;
+                   transform: rotate(45deg);
+                }
+             .header #nav-check:checked ~ .nav-toggler span::after{
+                   top: 0;
+                   transform: rotate(-45deg);
+                }
+        @media 
+               only screen and (max-width: 760px),
+               (min-device-width: 768px) and (max-device-width: 1024px)  {
+	.tablenav2, .nav2tr, .nav2td { 
+		display: block; 
+                }
+  </style>
+</head>
+<body>
+ <header class="header">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+           <div class="logo">
+             <a href="#">
+            USF Engineering EXPO
+             </a>
+           </div>
+           <input type="checkbox" id="nav-check">
+           <label for="nav-check" class="nav-toggler">
+              <span></span>
+           </label>
+           <nav class="nav">
+              <ul>
+                 <li><a class="nav-link" href="index.html">Home</a></li>
+                 <li><a class="nav-link" href="about.html">About</a></li>
+                 <li><a class="nav-link" href="previous.html">Previous EXPOs</a></li>
+                 <li><a class="nav-link" href="current.html">Current Theme & Map</a></li>
+                 <li><a class="nav-link" href="#">Exhibits</a></li>
+                 <li><a class="nav-link" href="faqs.html">FAQs</a></li>
+              </ul>
+           </nav>
+        </div>
+    </div>
+ </header>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <h1 class="h1">
+      <div class="exhibits"> 
+      Exhibits
+      </div> 
+  </h1>
+<br>
+<br>
+<br>
+<br>
+   <center>
+    <table class="nav2table" border="0">
+     <tr class="nav2tr">
+     <td class="nav2td">
+   <center>
+          <h2 class="h2"><a class="nav-link2" href="#communityexhibitors">Community Exhibitors</a></h2>
+   </center>
+      </td>
+     <td class="nav2td">
+   <center>
+          <h2 class="h2"><a class="nav-link2" href="#usfexhibitors">USF Exhibitors</a></h2>
+   </center>
+      </td>
+     <td class="nav2td">
+   <center>
+          <h2 class="h2"><a class="nav-link2" href="#competitions">Competitions</a></h2>
+   </center>
+      </td>
+     </tr>
+    </table>     
+   </center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<section class="communityexhibitors" id="communityexhibitors">
+<h2 class="h2">
+      <div class="communityexhibitors"><i> 
+         Community Exhibitors
+      </i></div> 
+</h2>
+<br>
+<h3 class="h3">
+      <div class="teco"><i> 
+         Tampa Electric Company (TECO)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="halff"><i> 
+         Halff Associates 
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="kci"><i> 
+         KCI Technologies 
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="mosaic"><i> 
+         Mosaic Global Sales LLC 
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="mosi"><i> 
+         Museum of Science and Industry (MoSI)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="powerdesigninc"><i> 
+         Power Design Incorporated
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="flconcrete"><i> 
+         Florida Concrete and Products Association
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="raytheon"><i> 
+         Raytheon Blackbird Technologies, Incorporated
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="gopherresource"><i> 
+         Gopher Resource (Friday Only)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="bbexhibit"><i> 
+         Balsa Bridge - Exhibit (Friday Only)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="bai"><i> 
+         Bay Area Innovations (Friday Only)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="battlebots"><i> 
+         BattleBots Team Gruff
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="electrathon"><i> 
+         Electrathon of Tampa Bay
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="epchc"><i> 
+         Environmental Protection Commission of Hillsborough County (EPCHC) (Friday Only)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="fdot"><i> 
+         Florida Department of Transportation (FDOT) (Friday Only)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="fwc"><i> 
+         Florida Fish and Wildlife Commission (FWC) 
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="flvs"><i> 
+         Florida Virtual Schools (FLVS)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="gca"><i> 
+         Gulf Coast Academy (GCA) (Saturday Only)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="middletonhs"><i> 
+         George H. Middleton High School
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="rrhsrr"><i> 
+         River Ridge High School (RRHS) Royal Robotics
+      </i></div> 
+</h3>
+<br>
+      <center>
+      <br>
+      <button type="button" style="background-color:#1cc061; font-family:helvetica; font-size:20px"><a style="text-decoration:none; color:black" href=#top><b> Return to Top </b></a></button>
+      </center>
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<section class="usfexhibitors">
+<h2 class="h2">
+      <div class="usfexhibitors" id="usfexhibitors"><i> 
+         University of South Florida Exhibitors
+      </i></div> 
+</h2>
+<br>
+<h3 class="h3">
+      <div class="medengdept"><i> 
+         USF Department of Medical Engineering
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="dfxlab"><i> 
+         Design for X (DfX) Lab (Friday Only)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="alphasigmakappa"><i> 
+         Alpha Sigma Kappa - Women in Technical Studies (&Alpha;&Sigma;&Kappa;)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="aauw"><i> 
+         American Association of University Women (AAUW) in Engineering at USF
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="usfambassadors"><i> 
+         USF Ambassadors
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="aiche"><i> 
+         American Institute of Chemical Engineers (AIChE)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="artemis"><i> 
+         Artemis Small Satellite (Friday Only)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="bmes"><i> 
+         Biomedical Engineering Society (BMES) at USF
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="usfchemsociety"><i> 
+         USF Chemistry Society
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="collofengambassadors"><i> 
+         College of Engineering Ambassadors
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="fwea"><i> 
+         Florida Water Environment Association (FWEA)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="girlswhocode"><i> 
+         Girls Who Code College Loop
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="gdsc"><i> 
+         Google Student Developer Club
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="itehc"><i> 
+         Innovation Technology and Entrepreneurship in Healthcare (ITEHC)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="informsusf"><i> 
+         The Institute for Operations Research and the Management Sciences (INFORMS) Student Chapter at USF
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="ieee"><i> 
+         Institute of Electrical and Electronics Engineers (IEEE) Student Chapter
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="ieee"><i> 
+         Institute of Electrical and Electronics Engineers Computer Society (IEEE-CS) Student Branch Chapter at USF
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="iise"><i> 
+         Institute of Industrial and Systems Engineers (IISE)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="ite"><i> 
+         USF Institute of Transportation Engineers (ITE)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="mech"><i> 
+         Mechanical Electrical Computer Hub (MECH) (Saturday Only)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="nsbe"><i> 
+         National Society of Black Engineers (NSBE)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="robobulls"><i> 
+         USF RoboBulls
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="soar"><i> 
+         Society of Aeronautics and Rocketry (SOAR) (Friday Only)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="scp"><i> 
+         Society of Competitive Programmers (SCP)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="shpe"><i> 
+         Society of Hispanic Professional Engineers (SHPE)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="shpe"><i> 
+         Society of Women Engineers (SWE)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="smta"><i> 
+         Surface Mount Technology Association (SMTA)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="tbp"><i> 
+         Tau Beta Pi Engineering Honor Society (&Tau;&Beta;&Pi;)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="thetatau"><i> 
+         Theta Tau (&Theta;&Tau;)
+      </i></div> 
+</h3>
+<br>
+<h3 class="h3">
+      <div class="wicse"><i> 
+         Women in Computer Science and Engineering (WiCSE)
+      </i></div> 
+</h3>
+<br>
+      <center>
+      <br>
+      <button type="button" style="background-color:#1cc061; font-family:helvetica; font-size:20px"><a style="text-decoration:none; color:black" href=#top><b> Return to Top </b></a></button>
+      </center>
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<section class="competitions" id="competitions">
+<h2 class="h2">
+      <div class="competitions"><i> 
+         Competitions
+      </i></div> 
+</h2>
+<br>
+<center>
+<iframe src="sebridgebuilding.pdf" width="500vw" height="625vw""></iframe>
+</center>
+</section>
+<br>
+<br>
+      <center>
+      <br>
+      <button type="button" style="background-color:#1cc061; font-family:helvetica; font-size:20px"><a style="text-decoration:none; color:black" href=#top><b> Return to Top </b></a></button>
+      </center>
+<br>
+<br>
+<br>
+<br>
+  <hr color="#1cc061">
+</body>
+<footer class="footer">
+              <center>
+                  <svg version="1.1" id="whitee" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 1350 3000 250" style="enable-background:new 0 1350 3000 250;" xml:space="preserve">
+                             <image xmlns="http://www.w3.org/2000/svg" style="overflow:visible;" width="181" height="192" alt="Engineering EXPO Logo" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALUAAADACAYAAABCvCLbAAAACXBIWXMAAAsTAAALEwEAmpwYAAAG 8GlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0w TXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRh LyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4wLWMwMDAgNzkuMTcxYzI3ZiwgMjAyMi8wOC8x Ni0xODowMjo0MyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9y Zy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9 IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIg eG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVm PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczpz dEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4 bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8v cHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRv YmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bXBSaWdodHM6TWFya2VkPSJGYWxzZSIgeG1wTU06T3Jp Z2luYWxEb2N1bWVudElEPSJ1dWlkOjA4N0VGQTE4NzVCQURFMTFCNzhEQzI4RkQ3NzVFMUZCIiB4 bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6MDdiZGRhMDQtZmQ3NS02MTRl LWFlZDYtZTE3ZGQyNDQxMjAyIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmVkZmNkMGE4LTEy ZTMtYTY0My05OWFkLTQ4OTJlODUwYzQ3YiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBGaXJld29y a3MgQ1M1IDExLjAuMC40ODQgV2luZG93cyIgeG1wOkNyZWF0ZURhdGU9IjIwMjItMTEtMDlUMTY6 MjY6MjktMDU6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIzLTAxLTExVDAxOjU0OjA5LTA1OjAwIiB4 bXA6TWV0YWRhdGFEYXRlPSIyMDIzLTAxLTExVDAxOjU0OjA5LTA1OjAwIiBkYzpmb3JtYXQ9Imlt YWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJl ZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjExREUwNkVBRTczOUUyMTFCQ0E2ODQyMURCQzUyMjk0IiBz dFJlZjpkb2N1bWVudElEPSJ1dWlkOjA4N0VGQTE4NzVCQURFMTFCNzhEQzI4RkQ3NzVFMUZCIi8+ IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBz dEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjA2MGMxODliLTQ0ZTctYjE0Mi1iYjg4LWRjNWZkNzVm OWQ0YSIgc3RFdnQ6d2hlbj0iMjAyMy0wMS0xMVQwMTo1NDowOS0wNTowMCIgc3RFdnQ6c29mdHdh cmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDI0LjEgKFdpbmRvd3MpIiBzdEV2dDpjaGFuZ2VkPSIv Ii8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlp ZDplZGZjZDBhOC0xMmUzLWE2NDMtOTlhZC00ODkyZTg1MGM0N2IiIHN0RXZ0OndoZW49IjIwMjMt MDEtMTFUMDE6NTQ6MDktMDU6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hv cCAyNC4xIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06 SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBh 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" xmlns:xlink="http://www.w3.org/1999/xlink" transform="matrix(1 0 0 1 1410 1404)">
+                      </image>
+                  </svg>
+              </center>
+  <h5 class="h5">
+   <div class="usfinfo">
+      <i>&copy; University of South Florida Engineering EXPO. All rights reserved. Designed by Stephanie England.</i>
+   </div>
+  </h5>
+  <h5 class="h5">
+   <div class="legal">
+      The University of South Florida is an Equal Opportunity/ Equal Access/ Affirmative Action Institution. Disability accommodations can be requested when registering for campus visits or by contacting the New Student Welcome Center at 813-974-7878 a minimum of five (5) working days in advance of your scheduled visit.
+   </div>
+  </h5>
+   <center>
+    <table class="table" border=0>
+     <tr>
+      <div class="socials">
+       <div class="instagram">
+       <td>
+         <a href="https://www.instagram.com/usfengineeringexpo/">
+              <svg fill="#ffffff" width="65px" height="65px" alt="Instagram Logo" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                  <g xmlns="http://www.w3.org/2000/svg" id="instagram" stroke-width="0"/></g>
+                  <g xmlns="http://www.w3.org/2000/svg" id="instagram"> <title>instagram</title> <path d="M25.805 7.996c0 0 0 0.001 0 0.001 0 0.994-0.806 1.799-1.799 1.799s-1.799-0.806-1.799-1.799c0-0.994 0.806-1.799 1.799-1.799v0c0.993 0.001 1.798 0.805 1.799 1.798v0zM16 20.999c-2.761 0-4.999-2.238-4.999-4.999s2.238-4.999 4.999-4.999c2.761 0 4.999 2.238 4.999 4.999v0c0 0 0 0.001 0 0.001 0 2.76-2.237 4.997-4.997 4.997-0 0-0.001 0-0.001 0h0zM16 8.3c0 0 0 0-0 0-4.253 0-7.7 3.448-7.7 7.7s3.448 7.7 7.7 7.7c4.253 0 7.7-3.448 7.7-7.7v0c0-0 0-0 0-0.001 0-4.252-3.447-7.7-7.7-7.7-0 0-0 0-0.001 0h0zM16 3.704c4.003 0 4.48 0.020 6.061 0.089 1.003 0.012 1.957 0.202 2.84 0.538l-0.057-0.019c1.314 0.512 2.334 1.532 2.835 2.812l0.012 0.034c0.316 0.826 0.504 1.781 0.516 2.778l0 0.005c0.071 1.582 0.087 2.057 0.087 6.061s-0.019 4.48-0.092 6.061c-0.019 1.004-0.21 1.958-0.545 2.841l0.019-0.058c-0.258 0.676-0.64 1.252-1.123 1.726l-0.001 0.001c-0.473 0.484-1.049 0.866-1.692 1.109l-0.032 0.011c-0.829 0.316-1.787 0.504-2.788 0.516l-0.005 0c-1.592 0.071-2.061 0.087-6.072 0.087-4.013 0-4.481-0.019-6.072-0.092-1.008-0.019-1.966-0.21-2.853-0.545l0.059 0.019c-0.676-0.254-1.252-0.637-1.722-1.122l-0.001-0.001c-0.489-0.47-0.873-1.047-1.114-1.693l-0.010-0.031c-0.315-0.828-0.506-1.785-0.525-2.785l-0-0.008c-0.056-1.575-0.076-2.061-0.076-6.053 0-3.994 0.020-4.481 0.076-6.075 0.019-1.007 0.209-1.964 0.544-2.85l-0.019 0.059c0.247-0.679 0.632-1.257 1.123-1.724l0.002-0.002c0.468-0.492 1.045-0.875 1.692-1.112l0.031-0.010c0.823-0.318 1.774-0.509 2.768-0.526l0.007-0c1.593-0.056 2.062-0.075 6.072-0.075zM16 1.004c-4.074 0-4.582 0.019-6.182 0.090-1.315 0.028-2.562 0.282-3.716 0.723l0.076-0.025c-1.040 0.397-1.926 0.986-2.656 1.728l-0.001 0.001c-0.745 0.73-1.333 1.617-1.713 2.607l-0.017 0.050c-0.416 1.078-0.67 2.326-0.697 3.628l-0 0.012c-0.075 1.6-0.090 2.108-0.090 6.182s0.019 4.582 0.090 6.182c0.028 1.315 0.282 2.562 0.723 3.716l-0.025-0.076c0.796 2.021 2.365 3.59 4.334 4.368l0.052 0.018c1.078 0.415 2.326 0.669 3.628 0.697l0.012 0c1.6 0.075 2.108 0.090 6.182 0.090s4.582-0.019 6.182-0.090c1.315-0.029 2.562-0.282 3.716-0.723l-0.076 0.026c2.021-0.796 3.59-2.365 4.368-4.334l0.018-0.052c0.416-1.078 0.669-2.326 0.697-3.628l0-0.012c0.075-1.6 0.090-2.108 0.090-6.182s-0.019-4.582-0.090-6.182c-0.029-1.315-0.282-2.562-0.723-3.716l0.026 0.076c-0.398-1.040-0.986-1.926-1.729-2.656l-0.001-0.001c-0.73-0.745-1.617-1.333-2.607-1.713l-0.050-0.017c-1.078-0.416-2.326-0.67-3.628-0.697l-0.012-0c-1.6-0.075-2.108-0.090-6.182-0.090z"/> 
+                  </g>
+              </svg>
+         </a>
+      </td>
+       </div>
+      </div>
+      <div class="socials">
+       <div class="collegeofeng">
+       <td><center>
+         <a href="https://www.usf.edu/engineering/">
+              <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="83.05px" height="60px" alt="University of South Florida Logo" viewBox="0 0 300 235" preserveAspectRatio="xMidYMid meet">
+                  <g xmlns="http://www.w3.org/2000/svg" transform="translate(0.000000,235.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
+<path d="M733 2303 c-6 -27 -21 -82 -34 -123 -30 -99 -76 -144 -235 -229 -251 -135 -355 -222 -414 -347 -55 -118 -61 -250 -15 -351 48 -105 165 -190 319 -230 60 -16 66 -20 60 -38 -16 -47 -16 -118 0 -160 l17 -43 -62 -98 c-34 -55 -83 -119 -109 -144 -65 -63 -83 -101 -78 -167 5 -60 56 -170 137 -295 l50 -78 460 0 459 0 94 54 93 54 6 -34 c9 -50 35 -74 80 -74 75 0 105 86 49 141 l-30 30 45 44 c51 48 75 97 75 152 0 51 111 247 149 263 65 27 133 96 206 210 l72 115 59 8 c327 44 513 117 655 257 148 146 195 332 125 486 -24 53 -92 128 -205 226 l-54 47 6 58 c4 33 22 114 42 182 35 121 37 140 16 127 -20 -12 -91 -278 -91 -339 0 -35 6 -45 57 -90 148 -135 190 -182 211 -240 26 -68 28 -140 7 -222 -56 -216 -295 -381 -634 -439 -52 -9 -118 -16 -147 -16 l-53 0 -68 -112 c-75 -123 -122 -176 -198 -219 -43 -25 -58 -42 -117 -144 -58 -99 -68 -123 -68 -163 0 -88 -55 -139 -311 -285 l-116 -67 -425 0 -425 0 -72 118 c-138 228 -146 308 -38 396 27 22 69 78 111 146 l68 111 -16 40 c-24 60 -21 129 8 172 l24 35 -88 20 c-275 65 -396 219 -349 444 32 150 130 262 322 368 253 140 303 175 333 232 9 17 28 71 43 122 15 50 31 101 35 114 6 17 4 22 -11 22 -14 0 -21 -12 -30 -47z m867 -2183 c11 -11 20 -29 20 -40 0 -22 -37 -60 -59 -60 -21 0 -61 40 -61 62 0 24 35 58 60 58 11 0 29 -9 40 -20z"/>
+<path d="M1536 117 c-12 -9 -17 -23 -14 -42 3 -27 7 -30 37 -30 44 0 61 35 31 65 -23 23 -30 24 -54 7z m50 -39 c3 -28 -10 -38 -19 -15 -4 9 -8 8 -16 -3 -8 -12 -11 -8 -11 18 0 28 3 33 21 30 15 -2 23 -11 25 -30z"/>
+<path d="M1550 90 c0 -5 5 -10 10 -10 6 0 10 5 10 10 0 6 -4 10 -10 10 -5 0 -10 -4 -10 -10z"/>
+<path d="M851 2274 c28 -42 65 -106 83 -143 27 -57 31 -77 31 -146 0 -65 -5 -90 -26 -135 -31 -66 -111 -164 -167 -205 -23 -16 -42 -33 -42 -36 0 -7 106 -25 205 -35 33 -3 171 -9 308 -12 l247 -7 -237 -353 -237 -352 22 -45 22 -45 -63 -103 c-35 -56 -66 -106 -69 -112 -4 -6 21 -10 66 -10 l73 0 73 138 c71 136 73 139 139 181 l66 43 194 321 193 322 67 0 c173 0 411 24 514 52 l77 20 -19 32 c-31 52 -54 135 -54 203 1 98 42 174 162 293 53 53 134 121 180 153 72 48 81 57 57 57 -70 0 -328 -236 -388 -356 -47 -94 -51 -186 -14 -289 18 -50 22 -71 14 -76 -30 -19 -201 -40 -388 -50 -113 -5 -210 -11 -216 -14 -7 -2 -99 -148 -205 -324 l-192 -321 -70 -47 c-65 -45 -72 -55 -124 -153 -79 -152 -78 -150 -118 -150 -19 0 -35 2 -35 5 0 3 23 41 50 85 55 87 58 103 34 153 l-16 34 231 346 c127 191 231 353 231 360 0 30 -25 37 -139 37 -143 1 -471 16 -528 26 l-43 6 59 65 c33 36 76 97 97 141 36 70 39 84 39 157 -1 69 -5 90 -33 150 -48 102 -124 215 -145 215 -14 0 -7 -16 34 -76z"/>
+<path d="M800 2195 c0 -49 -53 -146 -109 -201 -30 -29 -100 -78 -164 -114 -229 -128 -269 -155 -327 -217 -64 -68 -93 -131 -104 -225 -24 -190 129 -313 440 -353 l52 -7 -49 -71 c-57 -82 -60 -108 -25 -183 19 -42 22 -54 12 -65 -7 -8 -42 -61 -77 -119 -37 -61 -88 -128 -121 -161 -48 -47 -58 -62 -58 -90 0 -40 38 -122 107 -232 l48 -77 407 0 406 0 142 82 c79 46 162 102 187 124 42 39 44 45 42 88 -3 41 5 60 71 178 51 89 84 136 103 147 104 58 134 90 218 226 l84 135 61 0 c167 0 405 67 540 152 119 74 193 175 215 292 24 134 -13 203 -188 345 -80 65 -97 99 -90 179 3 37 14 93 25 124 11 32 14 55 8 51 -38 -22 -129 -99 -174 -147 -113 -119 -130 -231 -58 -373 20 -40 36 -79 36 -87 0 -53 -285 -108 -625 -119 l-69 -2 -182 -305 -183 -305 -73 -52 c-72 -51 -74 -53 -148 -197 l-75 -146 -148 0 -149 0 20 33 c11 17 52 83 90 146 l70 115 -19 38 c-10 20 -19 42 -19 48 0 6 96 154 214 330 l213 320 -126 0 c-301 0 -607 43 -635 89 -3 5 35 41 85 82 145 115 218 234 206 335 -5 46 -51 150 -87 194 l-20 25 0 -30z m1805 -95 c-5 -16 -10 -19 -18 -11 -7 7 -6 15 3 26 17 20 24 13 15 -15z m-1750 -86 c15 -94 -37 -182 -175 -295 -53 -44 -102 -90 -108 -103 -41 -91 148 -150 536 -164 l172 -7 -196 -294 -196 -294 21 -44 c24 -51 30 -34 -72 -199 -40 -66 -83 -136 -96 -157 l-23 -37 209 0 208 0 83 158 c82 157 83 158 146 197 l63 38 184 308 184 308 90 1 c191 0 418 32 520 72 60 23 105 64 105 94 0 12 -18 60 -40 105 -66 137 -51 226 57 332 l49 48 -4 -60 c-6 -80 21 -136 97 -199 118 -98 168 -155 181 -201 37 -137 -63 -303 -236 -393 -130 -68 -336 -118 -489 -118 l-70 -1 -85 -140 c-87 -144 -123 -182 -211 -224 -31 -15 -49 -40 -122 -169 -76 -136 -84 -155 -80 -192 5 -41 3 -43 -49 -82 -29 -22 -108 -72 -176 -111 l-123 -71 -377 2 -377 3 -62 104 c-35 57 -66 119 -69 139 -6 33 -4 38 44 81 33 30 82 95 137 185 l87 138 -26 58 c-14 32 -26 65 -26 74 0 9 31 63 69 120 l69 103 -91 6 c-177 13 -321 61 -390 132 -48 49 -62 104 -47 185 27 148 101 224 350 360 203 111 268 164 307 252 17 38 17 38 30 16 6 -13 15 -41 18 -64z m-235 -924 c0 -5 -2 -10 -4 -10 -3 0 -8 5 -11 10 -3 6 -1 10 4 10 6 0 11 -4 11 -10z"/>
+                 </g>
+              </svg>              
+         </a>
+      </center></td>
+       </div>
+      </div>
+      <div class="socials">
+       <div class="bullsconnect">
+       <td><center>
+         <a href="https://bullsconnect.usf.edu/feeds?type=club&type_id=57986&tab=home">
+             <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="65px" height="65px" alt="BullsConnect Logo" viewBox="0 0 900.000000 900.000000" preserveAspectRatio="xMidYMid meet">
+                   <g xmlns="http://www.w3.org/2000/svg" transform="translate(0.000000,900.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
+<path d="M1805 8940 c-11 -5 -33 -9 -50 -9 -16 -1 -50 -7 -75 -15 -25 -8 -72 -22 -105 -31 -64 -18 -118 -37 -175 -62 -19 -8 -48 -21 -65 -28 -45 -19 -167 -80 -206 -104 -19 -12 -41 -24 -49 -28 -8 -3 -31 -19 -51 -35 -20 -15 -40 -28 -43 -28 -22 0 -229 -172 -332 -276 -103 -103 -274 -309 -274 -330 0 -3 -12 -23 -28 -43 -37 -50 -44 -62 -140 -248 -32 -61 -96 -224 -117 -298 -9 -33 -22 -76 -28 -95 -21 -69 -29 -138 -34 -297 -3 -104 -1 -163 6 -163 11 0 61 148 87 255 90 381 215 652 431 943 55 73 274 300 327 337 15 11 33 25 39 30 81 71 323 224 397 250 8 3 42 18 75 34 108 50 158 66 452 141 106 27 203 56 215 64 13 7 35 16 51 20 15 4 27 11 27 16 0 12 -307 12 -335 0z"/>
+<path d="M6870 8942 c0 -16 25 -32 76 -47 85 -25 168 -47 209 -55 254 -54 535 -166 740 -296 225 -143 496 -401 612 -582 20 -31 48 -75 63 -97 36 -53 132 -243 165 -325 27 -69 71 -197 100 -295 10 -33 23 -73 28 -90 16 -46 68 -135 79 -135 12 0 5 220 -9 275 -47 180 -71 245 -157 425 -73 152 -167 300 -281 441 -70 86 -218 237 -290 294 -27 21 -52 42 -55 45 -9 10 -128 100 -133 100 -3 0 -31 17 -63 39 -51 33 -188 110 -234 131 -36 17 -88 39 -130 55 -25 10 -58 23 -75 30 -16 6 -57 20 -90 29 -33 10 -75 22 -92 27 -18 6 -56 15 -85 21 -70 14 -378 22 -378 10z"/>
+<path d="M4500 6663 c-117 -6 -234 -33 -302 -69 -14 -8 -33 -14 -41 -14 -7 0 -25 -9 -38 -21 -13 -11 -37 -27 -54 -34 -16 -7 -65 -45 -108 -84 -43 -39 -87 -71 -98 -71 -11 0 -55 18 -97 39 -184 93 -333 112 -502 64 -130 -37 -192 -71 -285 -161 -88 -85 -155 -186 -188 -284 -31 -92 -30 -291 1 -401 12 -42 22 -84 22 -93 0 -8 -33 -50 -72 -92 -80 -85 -127 -148 -174 -233 -102 -187 -148 -463 -95 -572 22 -45 31 -56 111 -126 133 -118 178 -151 205 -156 16 -3 133 -9 259 -13 l230 -8 30 -39 c43 -53 113 -121 186 -180 34 -27 75 -63 92 -78 36 -33 75 -50 97 -41 9 3 446 5 971 5 836 -2 962 0 1014 14 108 29 150 80 181 223 10 45 24 87 30 92 7 6 125 10 280 11 314 1 342 6 402 72 58 63 67 98 60 241 -6 128 -32 249 -67 311 -11 20 -20 44 -20 55 0 10 -6 25 -13 32 -8 7 -33 45 -57 83 -47 78 -75 121 -118 180 -61 83 -66 101 -53 190 33 236 4 393 -103 555 -20 30 -36 58 -36 63 0 18 -110 155 -161 201 -84 76 -127 100 -234 136 -90 30 -112 33 -220 33 -101 1 -128 -3 -173 -21 -29 -12 -64 -22 -79 -22 -14 0 -31 -6 -37 -14 -6 -7 -33 -21 -60 -30 -46 -15 -51 -15 -78 2 -15 10 -49 38 -75 63 -27 25 -64 54 -83 64 -19 10 -39 24 -43 31 -4 8 -16 14 -25 14 -9 0 -50 13 -89 30 -62 25 -130 41 -218 53 -11 2 -45 1 -75 0z m146 -118 c27 -8 57 -15 66 -15 26 0 138 -55 206 -100 69 -46 149 -130 168 -177 8 -18 21 -33 30 -33 9 0 39 21 67 46 110 99 271 144 438 123 44 -5 88 -14 97 -19 9 -5 40 -19 67 -32 109 -49 181 -120 264 -257 45 -75 61 -132 61 -226 0 -117 -35 -238 -95 -326 l-24 -37 80 -52 c43 -29 79 -55 79 -59 0 -3 19 -26 42 -51 50 -54 168 -225 168 -244 0 -7 6 -19 14 -25 8 -7 16 -28 20 -49 33 -223 34 -330 1 -373 -44 -59 -46 -59 -421 -59 l-345 0 3 -123 c3 -135 -3 -152 -67 -196 -31 -21 -34 -21 -1044 -21 -970 -1 -1015 0 -1049 18 -50 26 -70 57 -84 129 -10 52 -9 70 6 117 10 30 15 60 11 66 -5 8 -115 11 -379 9 l-373 -3 -32 23 c-50 36 -81 93 -81 148 0 51 30 214 50 273 57 166 213 370 341 443 44 25 47 34 22 68 -20 26 -43 72 -69 134 -21 51 -24 265 -5 316 35 90 87 181 129 225 53 56 125 114 140 114 5 0 15 7 22 15 7 8 20 15 29 15 9 0 29 7 44 15 45 23 171 35 264 24 107 -12 212 -61 294 -136 32 -30 59 -62 59 -70 0 -24 32 -10 49 22 84 157 251 284 437 334 87 23 234 26 300 6z m1527 -621 c37 -48 53 -89 72 -193 15 -81 16 -109 7 -134 -6 -18 -14 -50 -18 -71 -9 -49 -41 -106 -60 -106 -7 0 -18 9 -25 21 -11 22 -10 56 11 205 11 80 11 104 -4 182 -24 132 -21 144 17 96z m301 -981 c65 -121 94 -233 95 -367 1 -60 -3 -75 -25 -107 -50 -73 -36 -70 -424 -69 -347 1 -377 -2 -352 -33 5 -7 13 -49 16 -95 7 -72 5 -87 -14 -125 -12 -23 -34 -51 -48 -62 -27 -20 -45 -20 -1059 -23 l-1033 -2 -35 32 c-40 38 -57 91 -31 101 9 4 37 -5 63 -19 l48 -25 975 3 c896 3 978 4 1002 20 21 14 27 29 37 93 6 42 11 102 11 134 0 42 5 62 17 72 13 11 89 15 360 19 396 7 376 1 393 105 15 92 12 176 -10 270 -11 47 -20 90 -20 95 0 20 19 9 34 -17z m-3703 -425 c29 -22 41 -23 282 -29 139 -3 260 -9 270 -13 26 -12 23 -62 -5 -70 -13 -3 -138 -6 -279 -6 l-255 0 -32 28 c-50 45 -66 112 -27 112 9 0 29 -10 46 -22z"/>
+<path d="M4365 6443 c-197 -48 -382 -218 -422 -387 -7 -33 -11 -66 -8 -74 10 -26 52 25 80 97 83 217 332 358 571 322 88 -13 190 -54 261 -105 48 -34 127 -125 153 -176 18 -35 51 -70 67 -70 42 0 -27 137 -112 223 -53 53 -152 127 -171 127 -3 0 -20 7 -37 14 -98 45 -262 58 -382 29z"/>
+<path d="M4390 6305 c-14 -8 -33 -14 -43 -15 -9 0 -36 -12 -60 -27 -23 -15 -51 -32 -62 -38 -30 -16 -118 -131 -136 -178 -35 -93 -42 -125 -42 -192 0 -171 112 -348 265 -418 20 -9 40 -17 45 -17 19 0 43 -42 43 -76 0 -40 -30 -73 -66 -74 -23 0 -196 -60 -234 -81 -136 -76 -268 -199 -337 -314 -38 -63 -82 -158 -97 -210 -10 -33 -25 -81 -33 -107 -8 -26 -13 -56 -11 -68 l3 -21 889 0 c489 0 890 2 893 4 4 5 -11 77 -34 157 -54 185 -142 321 -300 463 -17 15 -34 27 -37 27 -3 0 -25 14 -48 30 -22 17 -47 30 -55 30 -7 0 -13 4 -13 9 0 5 -10 13 -22 16 -13 4 -36 12 -53 20 -40 18 -133 45 -154 45 -29 0 -61 43 -61 82 0 38 19 61 59 73 75 23 194 129 232 207 50 101 53 111 53 228 0 86 -4 122 -16 145 -9 17 -26 52 -39 78 -26 51 -86 120 -134 152 -30 20 -66 38 -138 69 -49 21 -221 22 -257 1z m268 -95 c93 -43 97 -45 100 -66 2 -10 23 -34 48 -53 24 -18 44 -40 44 -48 0 -7 7 -24 15 -36 8 -12 20 -54 26 -92 10 -60 9 -81 -6 -150 -15 -64 -25 -87 -54 -117 -56 -59 -73 -76 -114 -111 -21 -17 -60 -53 -87 -79 -49 -47 -50 -49 -50 -107 0 -71 25 -108 101 -146 26 -14 50 -29 54 -35 3 -5 21 -10 38 -10 18 0 48 -11 67 -24 19 -13 46 -27 60 -31 14 -4 37 -18 52 -31 16 -12 37 -25 48 -29 11 -3 20 -11 20 -16 0 -5 33 -42 73 -82 65 -65 137 -160 137 -182 0 -5 14 -30 31 -57 30 -47 31 -50 19 -93 -7 -25 -19 -50 -28 -57 -21 -18 -1437 -25 -1458 -7 -8 6 -23 31 -33 55 l-20 44 26 62 c13 34 30 67 37 73 7 5 29 36 50 68 20 31 41 57 47 57 5 0 14 11 19 25 5 14 26 35 46 47 19 11 40 32 45 44 4 13 16 24 26 24 9 0 26 8 37 19 29 25 155 91 176 91 10 0 23 7 30 15 7 8 20 15 29 15 27 1 76 33 111 73 30 34 32 42 28 91 -4 43 -11 62 -42 100 -21 25 -46 46 -55 46 -22 0 -41 19 -41 41 0 10 -13 21 -30 28 -16 5 -30 17 -30 25 0 8 -12 21 -27 28 -16 8 -31 27 -38 47 -6 19 -17 37 -23 39 -7 2 -12 16 -12 32 0 15 -7 47 -15 71 -12 33 -13 54 -6 94 14 77 60 166 96 185 17 9 35 26 41 38 12 23 56 62 72 62 5 0 20 8 33 19 32 25 50 28 142 30 67 1 87 -3 145 -29z"/>
+<path d="M3320 6286 c-90 -20 -166 -64 -228 -131 -31 -34 -65 -77 -74 -96 -52 -105 -53 -111 -52 -231 0 -67 5 -127 11 -140 7 -13 23 -48 36 -78 14 -30 44 -74 66 -97 23 -23 41 -47 41 -52 0 -6 -17 -15 -38 -20 -57 -16 -127 -66 -218 -157 -64 -64 -91 -100 -126 -170 -24 -49 -48 -100 -52 -114 -21 -64 -46 -200 -46 -246 0 -89 -24 -85 455 -84 229 1 419 0 421 -3 3 -2 -5 -43 -16 -91 -11 -48 -20 -113 -20 -146 0 -51 3 -61 26 -79 27 -21 30 -21 1003 -21 537 0 986 3 997 6 36 10 44 44 34 149 -8 87 -34 174 -52 175 -10 0 -11 -7 -12 -121 -1 -116 -10 -131 -93 -148 -72 -14 -1650 -15 -1738 -1 -86 14 -95 28 -95 149 0 86 -3 100 -25 133 -18 26 -35 39 -58 42 -17 3 -186 7 -374 8 -406 3 -378 -5 -378 121 0 70 5 94 34 167 58 144 129 234 255 323 81 57 136 117 136 146 0 22 -36 95 -65 131 -22 28 -59 165 -59 220 -1 76 39 194 84 252 99 125 274 190 415 153 129 -34 191 -81 303 -228 41 -54 62 -70 62 -47 0 6 -4 18 -9 28 -5 9 -16 37 -25 62 -21 60 -122 160 -201 198 -99 48 -216 62 -325 38z"/>
+<path d="M5428 6285 c-122 -26 -241 -109 -280 -196 -15 -33 -29 -49 -41 -49 -11 0 -17 -6 -14 -12 9 -29 51 -5 133 78 91 91 188 135 307 137 270 4 463 -237 406 -505 -13 -61 -35 -110 -85 -191 -22 -35 -33 -64 -29 -76 7 -24 72 -89 125 -126 69 -48 184 -168 224 -234 63 -104 99 -253 79 -331 -7 -25 -17 -36 -38 -44 -17 -5 -174 -12 -351 -15 -265 -5 -324 -9 -339 -21 -17 -14 -15 -15 21 -22 48 -8 736 -10 758 -2 23 9 29 62 17 160 -15 116 -58 237 -118 327 -86 130 -256 277 -320 277 -37 0 -31 49 10 81 35 28 75 102 101 186 17 55 22 218 7 227 -5 3 -12 22 -15 41 -10 50 -67 142 -123 197 -107 105 -275 149 -435 113z"/>
+<path d="M3390 6160 c-90 -21 -113 -30 -148 -56 -20 -15 -43 -37 -51 -48 -8 -10 -22 -26 -33 -35 -10 -8 -18 -21 -18 -29 0 -7 -8 -25 -17 -39 -28 -42 -24 -203 6 -266 30 -63 93 -123 163 -154 46 -20 59 -32 68 -58 19 -57 -29 -115 -95 -115 -25 0 -52 -9 -135 -49 -66 -31 -161 -110 -209 -173 -66 -89 -129 -225 -139 -302 l-4 -39 47 6 c26 4 188 7 359 7 l311 0 19 60 c37 120 154 320 221 379 19 17 35 34 35 39 0 5 -19 17 -42 27 -24 10 -57 24 -75 31 -17 8 -42 14 -56 14 -14 0 -42 9 -61 21 -32 19 -36 25 -36 63 0 49 11 62 80 94 48 22 116 83 131 117 5 11 13 27 18 35 12 20 41 118 41 140 0 21 -34 131 -50 160 -20 37 -88 108 -115 121 -11 5 -27 13 -35 18 -19 12 -119 41 -134 40 -6 -1 -27 -5 -46 -9z m153 -124 c84 -48 145 -140 132 -200 -3 -17 -9 -48 -12 -69 -4 -32 -22 -56 -108 -143 -67 -69 -109 -104 -123 -104 -14 0 -48 26 -91 70 -37 39 -72 70 -77 70 -19 0 -64 70 -74 115 -21 94 21 195 105 250 63 41 68 42 136 43 44 0 66 -6 112 -32z m-52 -692 c23 -19 56 -42 72 -51 29 -14 29 -16 23 -70 -3 -30 -14 -66 -24 -81 -31 -47 -41 -66 -65 -117 -33 -69 -108 -135 -156 -136 -217 -3 -384 2 -401 11 -42 23 2 147 75 212 22 19 50 38 63 42 13 4 22 15 22 27 0 11 10 23 23 28 12 5 46 25 75 45 29 19 70 40 91 46 21 5 58 26 82 45 24 19 51 35 61 35 9 0 35 -16 59 -36z"/>
+<path d="M5465 6154 c-27 -9 -65 -23 -84 -32 -44 -22 -130 -110 -138 -142 -3 -14 -12 -34 -19 -45 -20 -28 -19 -185 1 -211 8 -10 15 -26 15 -35 0 -28 99 -128 153 -154 55 -28 86 -59 87 -87 0 -28 -67 -88 -98 -88 -15 0 -49 -7 -77 -16 -27 -9 -56 -18 -62 -20 -24 -6 -13 -36 28 -83 49 -56 50 -57 85 -112 43 -66 53 -82 59 -99 4 -8 10 -22 15 -30 14 -24 45 -91 66 -143 l19 -48 333 0 c184 -1 336 2 339 5 6 6 -8 61 -34 131 -43 115 -85 179 -182 273 -59 57 -218 142 -266 142 -75 0 -131 80 -91 132 7 10 35 28 62 39 61 27 154 121 173 175 22 63 25 176 6 221 -36 84 -51 107 -95 146 -88 79 -201 110 -295 81z m202 -122 c24 -13 49 -34 54 -46 5 -11 19 -33 31 -48 29 -36 35 -163 9 -201 -42 -64 -57 -83 -73 -95 -9 -6 -41 -35 -70 -62 -29 -28 -61 -53 -72 -56 -23 -7 -64 21 -91 64 -11 17 -27 31 -36 32 -17 0 -39 23 -84 89 -43 64 -48 153 -10 226 31 63 44 75 110 109 45 23 57 25 119 20 45 -5 84 -15 113 -32z m-112 -672 c13 0 37 -12 54 -26 17 -14 52 -32 77 -40 26 -7 68 -30 95 -49 27 -19 53 -35 59 -35 5 0 17 -12 27 -26 9 -14 24 -29 33 -32 9 -4 43 -36 76 -71 56 -61 58 -65 60 -122 2 -32 -2 -61 -7 -65 -5 -3 -89 -7 -187 -8 -127 -3 -185 0 -207 9 -45 19 -145 117 -145 142 0 12 -15 48 -34 80 -18 33 -41 82 -52 108 l-18 49 29 20 c16 12 42 33 59 48 17 15 37 25 44 23 8 -3 24 -5 37 -5z"/>
+<path d="M2945 3979 c-55 -5 -131 -18 -170 -30 -38 -12 -92 -28 -120 -36 -27 -8 -61 -20 -75 -27 -14 -7 -50 -21 -80 -31 -30 -9 -60 -23 -66 -30 -5 -8 -23 -17 -40 -21 -16 -4 -50 -17 -76 -30 -61 -31 -106 -31 -149 1 -19 14 -59 37 -89 52 -53 25 -62 26 -220 27 l-165 1 -43 -34 c-23 -19 -54 -50 -68 -69 l-26 -33 -3 -292 c-1 -191 2 -305 9 -330 14 -49 73 -122 111 -139 21 -9 84 -13 215 -13 l185 0 57 33 c31 17 62 32 70 32 7 0 36 -15 64 -34 63 -42 133 -57 206 -43 29 5 69 9 88 8 112 -4 142 -2 183 14 43 16 49 16 101 0 60 -19 103 -15 162 12 31 15 35 15 53 -2 25 -22 100 -29 162 -14 35 8 57 7 85 -1 74 -22 125 -27 219 -19 89 7 163 32 180 59 11 18 46 11 114 -22 65 -33 67 -33 211 -33 131 0 150 2 203 25 58 24 58 24 105 6 124 -49 269 -49 389 -1 77 30 93 31 126 4 15 -11 43 -23 62 -26 37 -6 45 -4 125 35 58 28 71 28 139 -5 63 -31 121 -35 192 -14 40 13 49 12 79 -2 50 -25 92 -21 167 18 37 19 74 35 81 35 7 0 36 -16 65 -35 60 -41 100 -44 166 -15 55 25 78 25 137 -1 68 -29 231 -42 306 -24 32 7 73 23 91 34 44 27 62 26 117 -5 86 -50 308 -46 366 7 27 25 62 24 104 -5 43 -28 141 -47 196 -37 71 13 149 88 164 158 8 35 -14 113 -32 113 -9 0 -68 119 -68 138 0 5 17 32 38 59 53 66 62 85 62 131 0 46 -35 99 -119 180 -68 65 -127 107 -163 116 -45 11 -107 -9 -147 -47 -58 -56 -84 -64 -213 -69 -112 -4 -120 -6 -192 -43 l-76 -39 -67 32 c-77 36 -175 57 -225 49 -91 -16 -127 -25 -165 -45 -54 -28 -75 -28 -126 2 -69 38 -145 51 -234 38 -43 -5 -102 -8 -130 -5 -44 5 -62 1 -108 -22 l-55 -28 -53 21 c-29 12 -60 22 -70 22 -9 0 -26 5 -37 12 -14 9 -41 10 -112 1 -51 -5 -116 -8 -144 -6 -39 4 -66 -1 -117 -21 -64 -26 -66 -26 -109 -10 -23 10 -49 22 -57 28 -9 7 -65 10 -155 8 -78 -1 -152 0 -166 3 -15 3 -43 27 -67 58 -27 35 -59 62 -96 80 -52 27 -61 28 -178 26 -273 -5 -271 -6 -310 19 -20 12 -43 22 -51 22 -8 0 -44 10 -79 21 -35 12 -75 23 -89 25 -232 34 -362 39 -555 23z m442 -54 c46 -4 85 -11 89 -16 3 -5 22 -9 42 -9 21 0 47 -6 58 -14 11 -8 37 -17 57 -21 21 -4 40 -11 43 -16 3 -5 12 -9 21 -9 8 0 50 -21 91 -46 72 -44 79 -46 122 -38 25 5 101 8 170 7 115 -2 126 -4 143 -24 19 -23 23 -80 7 -109 -9 -16 -18 -18 -59 -13 -49 6 -82 -11 -44 -23 10 -3 31 -12 46 -20 16 -7 34 -14 41 -14 7 0 29 -16 48 -35 l35 -35 23 32 c39 58 86 73 225 73 117 -1 122 -2 165 -31 60 -40 77 -88 72 -212 -3 -83 -5 -93 -20 -88 -9 3 -40 13 -68 22 l-52 17 -4 56 c-2 31 -12 68 -22 84 -16 24 -24 27 -72 27 -56 0 -94 -22 -94 -55 0 -22 -12 -19 -56 15 -21 16 -47 30 -56 30 -23 0 38 -66 73 -79 24 -9 26 -15 32 -86 3 -45 12 -87 22 -101 15 -23 22 -25 77 -22 59 3 61 4 82 43 11 22 22 42 24 44 1 3 16 -3 31 -12 32 -19 96 -23 106 -6 4 5 19 8 33 5 53 -11 55 -3 50 178 -6 187 -11 176 77 173 49 -2 50 -3 53 -34 2 -18 8 -33 13 -33 5 0 22 15 38 33 l29 32 101 -1 c113 -1 127 -7 163 -77 16 -33 19 -57 17 -178 -2 -119 1 -143 15 -157 15 -15 19 -15 44 -1 l27 15 0 199 0 200 50 0 c64 0 83 -9 87 -40 l3 -26 39 33 c38 31 43 32 130 33 72 0 97 -4 118 -18 55 -38 57 -47 58 -288 1 -123 1 -229 1 -236 -1 -8 -21 -12 -63 -11 -100 1 -99 0 -91 70 l6 61 -54 -8 c-30 -4 -70 -8 -89 -9 -35 -1 -35 -1 -40 -56 l-5 -55 -60 -1 c-93 -1 -98 2 -92 46 6 44 0 55 -31 64 -34 11 -52 -10 -52 -60 0 -24 -3 -44 -7 -45 -48 -6 -141 -5 -150 3 -7 6 -9 23 -6 45 7 42 -8 55 -53 47 -18 -3 -46 1 -67 10 -35 14 -37 14 -47 -4 -6 -11 -8 -37 -4 -59 7 -46 1 -50 -88 -49 -75 0 -91 12 -78 58 15 52 12 78 -10 100 -36 36 -56 26 -76 -37 -14 -41 -29 -65 -57 -87 l-39 -31 -132 0 c-143 0 -181 11 -218 60 -23 31 -38 128 -38 252 l0 102 -47 23 c-50 23 -111 66 -152 105 -48 46 -147 48 -171 3 -10 -19 -14 -329 -4 -366 3 -11 18 -28 34 -37 36 -22 157 -23 207 -2 19 8 42 15 50 15 17 0 43 -59 43 -98 0 -52 -16 -56 -204 -57 -153 0 -174 2 -201 19 -85 56 -95 91 -95 346 0 209 6 248 47 286 27 25 30 44 7 44 -19 0 -112 28 -136 41 -10 5 -23 9 -29 9 -6 0 -25 6 -42 14 -166 76 -614 93 -800 31 -37 -12 -71 -25 -74 -29 -4 -3 -15 -6 -26 -6 -24 0 -62 -16 -280 -119 -71 -34 -133 -61 -139 -61 -5 0 -8 -6 -6 -12 3 -8 29 -15 64 -18 l59 -5 -4 -180 c-3 -173 -2 -181 19 -207 18 -24 29 -28 74 -28 89 0 91 6 89 230 -1 216 -9 203 101 191 l58 -6 2 -268 c1 -304 8 -282 -85 -275 -35 2 -44 7 -47 23 -8 48 -12 49 -48 14 -35 -34 -35 -34 -132 -34 -81 0 -101 3 -124 20 -53 40 -58 67 -58 295 0 124 -4 211 -10 215 -14 9 -55 -22 -70 -53 -7 -15 -18 -38 -24 -51 -6 -13 -19 -26 -28 -29 -29 -7 -21 -45 12 -64 75 -43 81 -207 10 -278 -39 -39 -92 -49 -271 -50 -96 -1 -178 -1 -184 -1 -12 1 -11 690 1 700 5 4 88 4 184 0 148 -6 181 -10 213 -27 49 -26 75 -60 79 -103 4 -49 26 -47 84 8 27 26 70 62 94 79 58 40 239 127 310 149 30 9 63 21 73 26 9 5 39 12 65 15 26 3 56 10 67 15 49 22 333 30 542 14z m-404 -503 c2 -323 0 -373 -13 -376 -13 -3 -126 -1 -140 3 -8 2 -3 727 5 740 4 8 32 11 77 9 l70 -3 1 -373z m248 366 c2 -67 -2 -731 -5 -736 -3 -6 -126 -8 -146 -3 -4 1 -4 520 0 739 0 8 22 12 75 12 53 0 75 -4 76 -12z m295 -13 c19 -8 34 -18 34 -24 0 -12 -140 -26 -175 -17 -29 7 -40 27 -31 52 5 14 17 16 73 10 36 -4 81 -13 99 -21z m3634 -55 c17 -9 19 -18 13 -71 l-6 -61 64 3 c35 2 70 0 77 -4 17 -11 16 -111 -2 -126 -10 -8 -27 -8 -66 0 -38 8 -55 8 -63 0 -15 -15 -9 -161 6 -180 9 -11 9 -15 0 -18 -18 -6 -16 -44 3 -72 14 -19 24 -22 63 -21 25 2 52 2 59 1 16 -1 17 -117 1 -127 -20 -12 -122 -14 -169 -2 -110 27 -134 92 -127 353 l2 69 -142 3 c-139 3 -143 3 -166 -21 -23 -23 -25 -31 -23 -129 1 -136 10 -147 107 -147 37 0 80 5 95 10 41 16 55 -2 52 -69 l-3 -56 -45 -8 c-25 -4 -93 -6 -151 -4 -92 4 -111 8 -139 28 -60 45 -70 79 -69 245 1 177 11 212 73 252 39 26 47 27 175 26 112 0 135 -3 146 -17 7 -10 15 -13 21 -7 5 4 23 10 39 12 30 3 30 3 27 63 -2 47 1 62 15 72 20 16 107 17 133 3z m-3478 -143 c10 -16 10 -104 0 -111 -4 -2 -43 0 -87 5 -96 11 -133 5 -145 -24 -10 -27 23 -67 54 -67 39 0 137 -36 159 -58 19 -20 22 -33 22 -117 0 -88 -2 -96 -26 -120 -34 -34 -81 -45 -209 -45 -151 0 -150 0 -150 73 l0 60 109 -7 c93 -6 111 -5 125 9 9 9 16 23 16 31 0 23 -38 54 -67 54 -36 1 -131 34 -148 51 -19 21 -35 77 -35 126 0 88 47 147 126 156 68 8 248 -3 256 -16z m2714 -14 c55 -41 72 -85 75 -192 2 -72 0 -95 -12 -102 -8 -5 -73 -9 -145 -8 -72 1 -136 -1 -142 -5 -19 -11 -14 -51 8 -71 17 -16 34 -17 145 -13 142 6 140 6 133 -78 -3 -37 -5 -39 -48 -47 -25 -4 -101 -6 -170 -4 -102 3 -131 7 -155 23 -43 27 -64 55 -65 84 0 14 -7 35 -15 48 -12 16 -13 27 -5 41 5 11 11 66 11 123 2 136 7 155 52 192 45 36 99 46 215 40 71 -4 89 -8 118 -31z m-2267 -97 c6 -7 9 -20 6 -28 -3 -8 6 -25 20 -38 14 -13 25 -31 25 -41 0 -25 -48 -59 -83 -59 -48 0 -67 25 -67 86 0 45 4 56 26 73 31 24 57 27 73 7z m467 -136 l23 -45 -31 -13 c-17 -7 -42 -12 -57 -10 -22 3 -26 8 -29 40 -2 27 -10 42 -25 50 -21 12 -21 13 13 19 67 13 82 7 106 -41z m2361 -2 c9 -10 13 -21 9 -25 -13 -14 -169 -9 -195 6 -24 13 -24 14 -5 28 28 21 167 14 191 -9z m308 -88 c10 -11 15 -23 12 -27 -10 -9 -57 18 -57 34 0 19 24 16 45 -7z"/>
+<path d="M1820 3539 l0 -82 76 6 c92 7 109 19 107 79 -3 62 -27 78 -114 78 l-69 0 0 -81z"/>
+<path d="M5045 3445 c-23 -22 -25 -32 -25 -117 0 -51 4 -99 9 -107 9 -14 171 -27 171 -13 10 227 -1 262 -82 262 -39 0 -54 -5 -73 -25z"/>
+<path d="M5621 3446 c-20 -21 -21 -31 -19 -137 3 -96 5 -113 18 -110 8 2 47 7 85 10 l70 6 3 104 c3 96 1 106 -19 127 -32 34 -106 34 -138 0z"/>
+<path d="M1825 3348 c-2 -7 -3 -49 -2 -93 l2 -80 70 4 c74 3 119 20 129 46 12 32 6 73 -16 100 -20 26 -25 27 -80 21 -35 -3 -68 -2 -79 5 -14 7 -20 7 -24 -3z"/>
+<path d="M6170 3450 c-14 -26 -16 -78 -4 -89 5 -4 41 -6 81 -3 66 4 72 6 78 29 3 13 0 36 -7 51 -12 24 -19 27 -75 30 -54 3 -63 0 -73 -18z"/>
+<path d="M33 1943 c4 -149 13 -220 36 -296 5 -17 17 -59 26 -92 9 -33 23 -73 30 -90 7 -16 20 -50 30 -75 21 -53 45 -109 56 -130 4 -8 18 -35 30 -60 19 -38 81 -144 132 -225 88 -141 293 -366 449 -492 73 -59 233 -170 303 -211 39 -22 174 -88 245 -119 19 -9 44 -21 55 -26 11 -6 33 -14 50 -18 16 -4 44 -12 60 -17 17 -6 57 -18 90 -27 33 -9 74 -21 91 -26 44 -13 244 -12 244 2 0 12 -179 99 -205 99 -51 0 -315 101 -470 180 -234 119 -378 222 -550 395 -214 214 -375 460 -485 740 -23 61 -47 119 -51 130 -7 17 -27 95 -95 365 -7 30 -20 68 -28 85 -8 16 -17 38 -20 48 -3 9 -10 17 -16 17 -8 0 -10 -47 -7 -157z"/>
+<path d="M8965 1960 c-3 -5 3 -10 14 -10 12 0 21 5 21 10 0 6 -6 10 -14 10 -8 0 -18 -4 -21 -10z"/>
+<path d="M8901 1889 c-16 -28 -36 -77 -46 -108 -117 -395 -187 -547 -371 -812 -100 -143 -300 -346 -458 -464 -58 -43 -235 -153 -276 -171 -19 -9 -57 -26 -85 -39 -185 -86 -267 -116 -420 -155 -27 -7 -54 -17 -59 -21 -6 -5 -17 -9 -26 -9 -18 0 -119 -61 -120 -72 0 -11 197 -10 234 1 31 9 91 25 156 41 19 4 60 18 90 30 30 12 66 25 80 30 14 4 39 15 55 23 17 8 57 28 90 43 50 23 151 80 240 137 127 80 309 236 436 374 50 53 182 224 216 278 100 159 165 285 218 425 9 25 23 60 31 78 8 18 14 40 14 50 0 9 6 34 14 57 7 22 19 61 25 88 14 59 15 247 1 247 -5 0 -23 -23 -39 -51z"/>
+</g>  
+             </svg>
+         </a>
+      </center></td>
+       </div>
+      </div>
+      <div class="socials">
+       <div class="email">
+       <td><center>
+         <a href="mailto:usfexpo.general@gmail.com">
+               <svg width="65px" height="65px" alt="Engineering EXPO email" viewBox="0 0 24 24" fill="none" xmlns="http//www.w3.org/2000/svg" stroke="#ffffff">      
+                  <g xmlns="http://www.w3.org/2000/svg" id="SVGRepo_bgCarrier" stroke-width="0"/>
+                  <g xmlns="http://www.w3.org/2000/svg" id="SVGRepo_iconCarrier"> <g id="style=linear"> <g id="email"> <path id="vector" d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z" stroke="#ffffff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/> <path id="vector_2" d="M18.7698 7.7688L13.2228 12.0551C12.5025 12.6116 11.4973 12.6116 10.777 12.0551L5.22998 7.7688" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/> 
+                  </g> </g> </g>
+               </svg>
+         </a>
+      </center></td>
+       </div>
+      </div>
+     </tr>   
+    </table>     
+   </center>
+
+</footer>
+</html>
+
+
+
+
