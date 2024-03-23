@@ -208,8 +208,15 @@
   margin: 0 auto;
 }
 
+.iframe-container iframe {
+  width: 40%; /* Adjust width as needed */
+  height: 600px; /* Adjust height as needed */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
 .iframe-container-solo iframe {
-  width: 40%; 
+  width: 60%; 
   height: 600px; 
   border: 1px solid #ccc; 
   box-sizing: border-box; 
@@ -221,13 +228,6 @@
   align-items: center; 
   max-width: 90%;
   margin: 0 auto;
-}
-
-.iframe-container iframe {
-  width: 40%; /* Adjust width as needed */
-  height: 600px; /* Adjust height as needed */
-  border: 1px solid #ccc;
-  box-sizing: border-box;
 }
 
 footer {
