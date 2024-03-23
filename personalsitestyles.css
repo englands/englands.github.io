@@ -270,6 +270,10 @@ footer {
       }
    }
 
+footer p  {
+    color: black;
+}
+
    @media(max-width: 991px){
     .about-me img {
         width: 70%;
