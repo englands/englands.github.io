@@ -1,2 +1,2 @@
 # Portfolio
-Personal Website currently highlighting my experience with HTML and CSS.
+My personal Website currently highlights my experience with HTML and CSS. The website is currently under construction.
